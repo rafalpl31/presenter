@@ -2,8 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
 
-test('renders all expected elements', () => {
-  const component = shallow(<App />);
+describe('<App>', () => {
 
-  expect(component.contains('.App-header')).toEqual(true);
+  test('renders all expected elements', () => {
+    const component = shallow(<App />);
+
+    expect(component.find('.App-header')).toHaveLength(1);
+    expect(component.find('DayLightPhases')).toHaveLength(1);
+  });
+
 });

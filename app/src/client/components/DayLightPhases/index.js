@@ -1,6 +1,6 @@
 import React from 'react';
 import { dateFormatter } from '../../Formatters';
-import { getUniqKey } from '../../Helpers';
+import { getUniqueKey } from '../../Helpers';
 import { CITIES } from '../../constants';
 import { DatePicker } from './DatePicker';
 import { FormLocation } from './FormLocation';
@@ -34,7 +34,7 @@ export class DayLightPhases extends React.Component {
                     name: name.value,
                     lat: Number(lat.value),
                     lon: Number(lon.value),
-                    key: getUniqKey()
+                    key: getUniqueKey()
                 }
             ]
         });
