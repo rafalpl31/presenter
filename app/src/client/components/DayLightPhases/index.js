@@ -1,6 +1,6 @@
 import React from 'react';
-import { dateFormatter } from '../../Formatters';
-import { getUniqueKey } from '../../Helpers';
+import { dateFormatter } from '../../Utils/Formatters';
+import { getUniqueKey } from '../../Utils/Helpers';
 import { CITIES } from '../../constants';
 import { DatePicker } from './DatePicker';
 import { FormLocation } from './FormLocation';

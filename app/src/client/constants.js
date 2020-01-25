@@ -1,6 +1,6 @@
-import { getUniqueKey } from './Helpers';
+import { getUniqueKey } from './Utils/Helpers';
 
-export const CITIES = [
+const CITIES = [
     {
         name: 'Krakow',
         lat: 50.064651,
@@ -14,9 +14,16 @@ export const CITIES = [
         key: getUniqueKey()
     },
     {
-        name: 'NewYork',
+        name: 'New York',
         lat: 55.755825,
         lon: 37.617298,
         key: getUniqueKey()
     }
 ];
+
+const API_ENDPOINT = 'https://api.sunrise-sunset.org/json';
+
+export {
+    API_ENDPOINT,
+    CITIES
+};

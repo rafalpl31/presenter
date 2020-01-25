@@ -4,8 +4,8 @@ import App from './App';
 
 describe('<App>', () => {
 
-  test('renders all expected elements', () => {
-    const component = shallow(<App />);
+  it('renders all expected elements', () => {
+    const component = shallow(<App/>);
 
     expect(component.find('.App-header')).toHaveLength(1);
     expect(component.find('DayLightPhases')).toHaveLength(1);
