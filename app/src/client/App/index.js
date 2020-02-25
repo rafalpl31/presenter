@@ -1,7 +1,7 @@
 import React, { StrictMode } from 'react';
 import PropTypes from 'prop-types';
-import { PageHeader } from '../atoms';
-import { PageContent } from '../PageContent';
+import { PageHeader } from '../components/atoms';
+import { PageContent } from '../components/PageContent';
 import './style.css';
 
 /**
