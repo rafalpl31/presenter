@@ -1,39 +1,31 @@
-import { API_ENDPOINT } from '../../constants';
+import { sunrise as sunriseAPI } from '../../../config/services';
+import { handleError } from './handleError';
+import { get } from '../../../server';
 
-const RESPONSE_OK = 'OK';
+const {
+  defaults: {
+    date: defaultDateParameter
+  },
+  endpoint: sunriseEndpoint
+} = sunriseAPI;
 
 /**
- * @param lat
- * @param lon
- * @param date
+ * @param lat {string}
+ * @param lon {string}
+ * @param date {string}
  */
-export const fetchSunriseSunsetData = (lat, lon, date) =>
-    fetch(`${API_ENDPOINT}?lat=${lat}&lng=${lon}&date=${date}`)
+export const fetchSunriseSunsetData = async (lat, lon, date = defaultDateParameter) =>
+    await get({ url: `${sunriseEndpoint}?lat=${lat}&lng=${lon}&date=${date}` })
         .then(handleAPIResponse)
-        .catch((error) => alert(error));
+        .catch(handleError);
 
 /**
- * @param Response
- * @returns {Promise<{sunrise: *, sunset: *}>}
+ * @param sunrise {string}
+ * @param sunset {string}
+ * @returns {{sunrise: string, sunset: string}}
  */
-const handleAPIResponse = (Response) => {
-    if (!Response.ok) {
-        throwNewError();
-    }
-
-    return Response.json()
-        .then(({ results: { sunrise,  sunset } = {}, status } = {}) => {
-            if (status !== RESPONSE_OK) {
-                throwNewError();
-            }
-
-            return {
-                sunrise,
-                sunset
-            };
-        });
-};
-
-const throwNewError = () => {
-    throw new Error('You entered wrong data!');
-};
+const handleAPIResponse = ({ results: { sunrise, sunset } = {} } = {}) =>
+    ({
+        sunrise,
+        sunset
+    });

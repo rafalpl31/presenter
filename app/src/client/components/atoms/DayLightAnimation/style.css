@@ -1,0 +1,16 @@
+.dayLightAnimation {
+    background-color: black;
+    width: 100px;
+    height: 15px;
+    display: inline-block;
+    margin: 0 10px;
+    vertical-align: middle;
+    position: relative;
+    border: solid 1px gray;
+}
+
+.dayLightAnimation span {
+    position: absolute;
+    background-color: yellow;
+    height: 100%;
+}

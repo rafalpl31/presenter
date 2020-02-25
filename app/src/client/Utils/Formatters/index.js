@@ -1,6 +1,6 @@
 /**
  * Returns date in format 'yyyy-mm-dd'
- * @param DateObject
+ * @param DateObject {Date}
  */
 export const dateFormatter = (DateObject = new Date()) => {
     const month = '' + (DateObject.getMonth() + 1);
@@ -19,7 +19,7 @@ export const dateFormatter = (DateObject = new Date()) => {
 };
 
 /**
- * @param date
+ * @param date {string}
  * @returns {number}
  */
 export const convertDateToPercentages = (date = '') => {

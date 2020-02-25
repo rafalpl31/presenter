@@ -1,0 +1,8 @@
+{
+  "sunrise": {
+    "defaults": {
+      "date": "today"
+    },
+    "endpoint": "https://api.sunrise-sunset.org/json"
+  }
+}

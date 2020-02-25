@@ -1,4 +1,49 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Daylight periods visualisation
+
+- (1) The goal of this task is to create React application that will represent the daylight period visualisation of each
+location on a chosen date.
+- (2) By default, the daylight periods should be presented or cities listed bellow at the same time (expressed UTC).
+```
+{
+    {
+        name: 'Krakow',
+        lat: 50.064651,
+        lon: 19.944981
+    },
+    {
+        name: 'Tokio',
+        lat: 39.758602,
+        lon: -104.997437
+    },
+    {
+        name: 'New York',
+        lat: 55.755825,
+        lon: 37.617298
+    }
+}
+```
+
+- (3) Sunrise and sunset times should be fetched using the following API: https://api.sunrise-sunset.org/json
+- (4) Solution should contain tests
+- (5) The presentation layer should contain the following elements:
+    a) A simulation area that contains visual representation of daylight phases, name and coordinates, per each
+    location.
+    b) A date picker for selecting a day for which daylight phase will be shown.
+    c) A form to add new location.
+    d) Possibility to remove a location.
+
+## Task Evaluation Criteria
+- Overall architecture, simplicity and readability of the code.
+- Quality of written tests.
+- Usage of SOLID and similar principles.
+- Design of modules, classes, methods.
+- Problem-solving approach and creativity of the solution.
+
+## Hints
+- In some cities, the sun still might be shinning after UTC midnight.
+- The solution should handle any exception without crashing.
+- Nice looking app would not be enough, because in this task you should focus
+mostly on the way the code is written.
 
 ## Available Scripts
 
