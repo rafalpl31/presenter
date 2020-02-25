@@ -1,1 +1,1 @@
-### Please read into at `/app/README.md`
+### Please read intro at `/app/README.md`
