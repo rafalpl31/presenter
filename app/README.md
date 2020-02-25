@@ -66,9 +66,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 Launches the test runner to output present coverage.<br />
 
-### `npm run test:coverage`
+### `npm run lint`
 
-Launches the test runner to output present coverage.<br />
+Launches the eslint checks<br />
 
 ### `npm run build`
 
