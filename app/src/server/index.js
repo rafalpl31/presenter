@@ -1,4 +1,4 @@
-import { get } from './serviceIntegretion/get';
+import { get } from './serviceIntegration/get';
 
 export {
     get
