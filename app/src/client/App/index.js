@@ -10,8 +10,8 @@ import './style.css';
 const App = ({ title }) =>
     <StrictMode>
         <div className="App">
-          <PageHeader title={title}/>
-          <PageContent/>
+            <PageHeader title={title}/>
+            <PageContent/>
         </div>
     </StrictMode>;
 

@@ -30,7 +30,7 @@ export class PageContent extends React.PureComponent {
     };
 
     removeByIndex = (data, index) =>
-        [...data].filter((element, elementIndex) => elementIndex !== index)
+        [...data].filter((element, elementIndex) => elementIndex !== index);
 
     removeCityFromState = (index) => {
         const cities = this.removeByIndex(this.state.cities, index);
