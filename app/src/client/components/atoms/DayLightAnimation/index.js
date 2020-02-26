@@ -3,7 +3,7 @@ import React from 'react';
 import { getStyles } from './getAnimationStyles';
 import './style.css';
 
-type DayLightAnimationType = {
+type Props = {
     sunrise: string,
     sunset: string
 };
@@ -12,7 +12,7 @@ type DayLightAnimationType = {
  * @param sunrise {string}
  * @param sunset {string}
  */
-export const DayLightAnimation = ({ sunrise, sunset } : DayLightAnimationType) =>
+export const DayLightAnimation = ({ sunrise, sunset } : Props) =>
   <div
     className="dayLightAnimation"
     style={getStyles(sunrise, sunset)}

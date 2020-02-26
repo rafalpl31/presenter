@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-type HeaderType = {
+type Props = {
     className?: string,
     title: string
 };
@@ -10,7 +10,7 @@ type HeaderType = {
  * @param className {string}
  * @param title {string}
  */
-export const Header = ({ className, title } : HeaderType) => {
+export const Header = ({ className, title } : Props) => {
     const headerProps = className
         ? { className }
         : {};

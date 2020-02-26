@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-type ButtonType = {
+type Props = {
     className?: string,
     label: string,
     onClick?: Function,
@@ -14,7 +14,7 @@ type ButtonType = {
  * @param onClick
  * @param type {string}
  */
-export const Button = ({ className, label, onClick, type = 'button' } : ButtonType) =>
+export const Button = ({ className, label, onClick, type = 'button' } : Props) =>
     <button
         className={className}
         onClick={onClick}
