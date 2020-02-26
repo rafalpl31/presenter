@@ -1,14 +1,21 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
+import { City as CityType } from '../../../types';
 import { Header } from '../../atoms';
 import { Location } from './Location';
+
+type Props = {
+    locations: CityType[],
+    date?: string,
+    onClickButton: Function
+};
 
 /**
  * @param locations {array}
  * @param date {string}
  * @param onClickButton
  */
-const LocationsList = ({ locations = [], date, onClickButton }) =>
+const LocationsList = ({ locations, date, onClickButton } : Props) =>
     <>
         <Header title="Cities List"/>
         {locations.map(({ name, lat, lon }, index) =>
@@ -23,16 +30,5 @@ const LocationsList = ({ locations = [], date, onClickButton }) =>
             />
         )}
     </>;
-
-LocationsList.propTypes = {
-    locations: PropTypes.arrayOf(
-        PropTypes.shape({
-            lat: PropTypes.number,
-            lon: PropTypes.number,
-            name: PropTypes.string
-        })).isRequired,
-    date: PropTypes.string,
-    onClickButton: PropTypes.func.isRequired
-};
 
 export default LocationsList;

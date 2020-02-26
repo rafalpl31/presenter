@@ -12,7 +12,7 @@ import './style.css';
 type Props = {
     lat: number,
     lon: number,
-    date: string,
+    date?: string,
     onClickButton: Function,
     index: number,
     name: string
