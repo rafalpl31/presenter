@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { fetchSunriseSunsetData } from '../../../../Utils/serviceCalls';
+import { fetchSunriseSunsetData } from '../../../../utils/serviceCalls';
 import {
     Button,
     DayLightAnimation

@@ -1,4 +1,4 @@
-import { convertDateToPercentages } from '../../../Utils/Formatters';
+import { convertDateToPercentages } from '../../../utils/formatters';
 import { getSingleGradient } from './getSingleGradient';
 import { getDoubleGradient } from './getDoubleGradient';
 

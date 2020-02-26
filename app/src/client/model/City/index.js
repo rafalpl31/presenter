@@ -1,7 +1,7 @@
 /**
  * @param latitudeValue {string}
  * @param longitudeValue {string}
- *  * @param nameValue {string}
+ * @param nameValue {string}
  * @returns {{name: string, lon: number, lat: number}}
  */
 export const getCity = ({

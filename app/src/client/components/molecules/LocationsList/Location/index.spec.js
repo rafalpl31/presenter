@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { fetchSunriseSunsetData } from '../../../../Utils/serviceCalls';
+import { fetchSunriseSunsetData } from '../../../../utils/serviceCalls';
 import { DayLightAnimation } from '../../../atoms';
 import { Location } from './';
 
-jest.mock('../../../../Utils/serviceCalls');
+jest.mock('../../../../utils/serviceCalls');
 
 describe('<Location/>', () => {
 

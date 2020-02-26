@@ -1,5 +1,5 @@
 import React from 'react';
-import { dateFormatter } from '../../Utils/Formatters';
+import { dateFormatter } from '../../utils/formatters';
 import { cities } from '../../../config/app';
 import { DatePicker } from '../molecules/DatePicker';
 import { LocationForm } from '../forms/LocationForm';
