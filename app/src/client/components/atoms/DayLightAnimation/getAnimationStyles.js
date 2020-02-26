@@ -1,3 +1,4 @@
+// @flow
 import { convertDateToPercentages } from '../../../utils/formatters';
 import { getSingleGradient } from './getSingleGradient';
 import { getDoubleGradient } from './getDoubleGradient';
@@ -7,7 +8,7 @@ import { getDoubleGradient } from './getDoubleGradient';
  * @param sunset {string}
  * @returns {{background: string}}
  */
-export const getStyles = (sunrise, sunset) => {
+export const getStyles = (sunrise: string, sunset: string) => {
     const left = convertDateToPercentages(sunrise);
     const right = convertDateToPercentages(sunset);
 

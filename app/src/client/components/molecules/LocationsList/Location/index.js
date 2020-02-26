@@ -1,25 +1,30 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { fetchSunriseSunsetData } from '../../../../utils/serviceCalls';
 import {
     Button,
     DayLightAnimation
 } from '../../../atoms';
+import type { SunDetails as SunDetailsType } from '../../../../types';
 import { SunDetails } from '../../../../model';
 import './style.css';
 
-export class Location extends React.PureComponent {
+type Props = {
+    lat: number,
+    lon: number,
+    date: string,
+    onClickButton: Function,
+    index: number,
+    name: string
+};
 
-    static propTypes = {
-        lat: PropTypes.number.isRequired,
-        lon: PropTypes.number.isRequired,
-        date: PropTypes.string,
-        onClickButton: PropTypes.func.isRequired,
-        index: PropTypes.number.isRequired,
-        name: PropTypes.string.isRequired
-    };
+type State = {
+    ...SunDetailsType
+};
 
-    constructor(props) {
+export class Location extends React.PureComponent<Props, State> {
+
+    constructor(props: Props) {
         super(props);
 
         this.state = SunDetails();
@@ -32,14 +37,14 @@ export class Location extends React.PureComponent {
             .then(this.updateLocation);
     }
 
-    isValidSunData = ({ sunrise, sunset } = {}) =>
-        sunrise && sunset
+    isValidSunData = ({ sunrise, sunset }: State = {}) =>
+        sunrise && sunset;
 
-    updateLocation = (data) => {
+    updateLocation = (data: State) => {
         if (this.isValidSunData(data)) {
             this.setState(SunDetails(data));
         }
-    }
+    };
 
     onRemoveLocation = () =>
         this.props.onClickButton(this.props.index);

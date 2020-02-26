@@ -1,5 +1,12 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
+
+type ButtonType = {
+    className?: string,
+    label: string,
+    onClick?: Function,
+    type?: string
+};
 
 /**
  * @param className {string}
@@ -7,16 +14,9 @@ import PropTypes from 'prop-types';
  * @param onClick
  * @param type {string}
  */
-export const Button = ({ className, label, onClick, type = 'button' }) =>
+export const Button = ({ className, label, onClick, type = 'button' } : ButtonType) =>
     <button
         className={className}
         onClick={onClick}
         type={type}
     >{label}</button>;
-
-Button.propTypes = {
-    className: PropTypes.string,
-    label: PropTypes.string.isRequired,
-    onClick: PropTypes.func,
-    type: PropTypes.string
-};

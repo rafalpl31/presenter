@@ -1,14 +1,22 @@
+// @flow
 import React from 'react';
 import { dateFormatter } from '../../utils/formatters';
 import { cities } from '../../../config/app';
 import { DatePicker } from '../molecules/DatePicker';
 import { LocationForm } from '../forms/LocationForm';
 import LocationsList from '../molecules/LocationsList';
+import type { City as CityType } from '../../types';
 import { City } from '../../model';
 
-export class PageContent extends React.PureComponent {
+type Props = {};
+type State = {
+    cities: CityType[],
+    date?: string
+};
 
-    constructor (props) {
+export class PageContent extends React.PureComponent<Props, State> {
+
+    constructor (props: Props) {
         super(props);
 
         this.state = {
@@ -16,7 +24,7 @@ export class PageContent extends React.PureComponent {
         };
     }
 
-    onSubmitForm = (event) => {
+    onSubmitForm = (event: SyntheticEvent<HTMLFormElement>) => {
         event.preventDefault();
 
         const newCity = City(event.target);
@@ -29,10 +37,10 @@ export class PageContent extends React.PureComponent {
         });
     };
 
-    removeByIndex = (data, index) =>
+    removeByIndex = (data: CityType[], index: number): CityType[] =>
         [...data].filter((element, elementIndex) => elementIndex !== index);
 
-    removeCityFromState = (index) => {
+    removeCityFromState = (index: number) => {
         const cities = this.removeByIndex(this.state.cities, index);
 
         this.setState({
@@ -40,7 +48,7 @@ export class PageContent extends React.PureComponent {
         });
     };
 
-    onChangeDatePicker = (selectedDate) => {
+    onChangeDatePicker = (selectedDate: Date) => {
         const date = dateFormatter(selectedDate);
 
         this.setState({

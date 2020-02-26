@@ -1,3 +1,4 @@
+// @flow
 import axios from 'axios';
 
 const ACCEPTABLE_STATUS = [
@@ -5,7 +6,7 @@ const ACCEPTABLE_STATUS = [
     204
 ];
 
-export const get = async ({ url }) =>
+export const get = async ({ url } : { url: string }) =>
     await axios
         .get(url)
         .then(({ data, status }) => {

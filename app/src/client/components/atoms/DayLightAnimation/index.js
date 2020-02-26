@@ -1,19 +1,19 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { getStyles } from './getAnimationStyles';
 import './style.css';
+
+type DayLightAnimationType = {
+    sunrise: string,
+    sunset: string
+};
 
 /**
  * @param sunrise {string}
  * @param sunset {string}
  */
-export const DayLightAnimation = ({ sunrise, sunset }) =>
+export const DayLightAnimation = ({ sunrise, sunset } : DayLightAnimationType) =>
   <div
     className="dayLightAnimation"
     style={getStyles(sunrise, sunset)}
   />;
-
-DayLightAnimation.propTypes = {
-    sunrise: PropTypes.string.isRequired,
-    sunset: PropTypes.string.isRequired
-};

@@ -1,21 +1,21 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
+
+type HeaderType = {
+    className?: string,
+    title: string
+};
 
 /**
  * @param className {string}
  * @param title {string}
  */
-export const Header = ({ className, title }) => {
-  const headerProps = className
-    ? { className }
-    : {};
+export const Header = ({ className, title } : HeaderType) => {
+    const headerProps = className
+        ? { className }
+        : {};
 
-  return (
-    <h2 {...headerProps}>{title}</h2>
-  );
-};
-
-Header.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string.isRequired
+    return (
+        <h2 {...headerProps}>{title}</h2>
+    );
 };

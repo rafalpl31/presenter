@@ -68,7 +68,11 @@ Launches the test runner to output present coverage.<br />
 
 ### `npm run lint`
 
-Launches the eslint checks<br />
+Statically analyzes your code to quickly find problems.<br />
+
+### `npm run flow`
+
+Launches the static type checks.<br />
 
 ### `npm run build`
 

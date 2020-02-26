@@ -1,15 +1,15 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import './style.css';
+
+type PageHeaderType = {
+    title: string
+};
 
 /**
  * @param title {string}
  */
-export const PageHeader = ({ title }) =>
+export const PageHeader = ({ title } : PageHeaderType) =>
     <header className="App-header">
       {title}
     </header>;
-
-PageHeader.propTypes = {
-    title: PropTypes.string.isRequired
-};

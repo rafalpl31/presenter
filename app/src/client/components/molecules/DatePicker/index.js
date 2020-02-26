@@ -1,10 +1,14 @@
+// @flow
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import ReactDatePicker from 'react-datepicker';
 import { Header } from '../../atoms';
 import 'react-datepicker/dist/react-datepicker.css';
 
-export const DatePicker = ({ onChange } = {}) => {
+type Props = {
+    onChange: Function
+};
+
+export const DatePicker = ({ onChange }: Props) => {
     const [ startDate, setStartDate ] = useState(new Date());
 
     return (
@@ -22,8 +26,4 @@ export const DatePicker = ({ onChange } = {}) => {
             />
         </>
     );
-};
-
-DatePicker.propTypes = {
-    onChange: PropTypes.func.isRequired
 };

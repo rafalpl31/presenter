@@ -1,3 +1,6 @@
+// @flow
+import { City } from '../../types';
+
 /**
  * @param latitudeValue {string}
  * @param longitudeValue {string}
@@ -8,7 +11,7 @@ export const getCity = ({
     lat: { value: latitudeValue = '' } = {},
     lon: { value: longitudeValue = '' } = {},
     name: { value: nameValue } = {}
-} = {}) =>
+} : City = {}) =>
     ({
         lat: Number(latitudeValue),
         lon: Number(longitudeValue),
