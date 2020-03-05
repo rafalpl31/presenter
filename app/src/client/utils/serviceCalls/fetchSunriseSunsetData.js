@@ -15,8 +15,8 @@ const {
  * @param lon {string}
  * @param date {string}
  */
-export const fetchSunriseSunsetData = async (lat: string, lon: string, date: string = defaultDateParameter) =>
-    await get({ url: `${sunriseEndpoint}?lat=${lat}&lng=${lon}&date=${date}` })
+export const fetchSunriseSunsetData = (lat: string, lon: string, date: string = defaultDateParameter) =>
+     get({ url: `${sunriseEndpoint}?lat=${lat}&lng=${lon}&date=${date}` })
         .then(handleAPIResponse)
         .catch(handleError);
 
