@@ -10,7 +10,7 @@ type Props = {
 /**
  * @param onSubmit
  */
-export const LocationForm = memo(({ onSubmit } : Props) =>
+const NonMemoLocationForm = ({ onSubmit } : Props) =>
     <form
         className="locationForm"
         onSubmit={onSubmit}
@@ -28,5 +28,6 @@ export const LocationForm = memo(({ onSubmit } : Props) =>
             type="submit"
             label="Add new city"
         />
-    </form>
-);
+    </form>;
+
+export const LocationForm = memo(NonMemoLocationForm);

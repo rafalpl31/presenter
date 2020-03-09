@@ -32,8 +32,10 @@ export class Location extends React.Component<Props, State> {
 
     shouldComponentUpdate (
         nextProps: Props,
-        { sunrise: nextSunrise, sunset: nextSunset }: State,
-        nextContext: any
+        {
+            sunrise: nextSunrise,
+            sunset: nextSunset
+        }: State
     ): boolean {
         const {
             sunrise,

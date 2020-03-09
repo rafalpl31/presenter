@@ -12,9 +12,10 @@ type Props = {
  * @param sunrise {string}
  * @param sunset {string}
  */
-export const DayLightAnimation = memo(({ sunrise, sunset } : Props) =>
+const NonMemoDayLightAnimation = ({ sunrise, sunset } : Props) =>
     <div
         className="dayLightAnimation"
         style={getStyles(sunrise, sunset)}
-    />
-);
+    />;
+
+export const DayLightAnimation = memo(NonMemoDayLightAnimation);

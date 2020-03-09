@@ -9,8 +9,9 @@ type Props = {
 /**
  * @param title {string}
  */
-export const PageHeader = memo(({ title } : Props) =>
+const NonMemoPageHeader = ({ title } : Props) =>
     <header className="App-header">
       {title}
-    </header>
-);
+    </header>;
+
+export const PageHeader = memo(NonMemoPageHeader);

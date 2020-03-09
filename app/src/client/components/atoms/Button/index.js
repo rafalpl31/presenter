@@ -14,10 +14,11 @@ type Props = {
  * @param onClick
  * @param type {string}
  */
-export const Button = memo(({ className, label, onClick, type = 'button' } : Props) =>
+const NonMemoButton = ({ className, label, onClick, type = 'button' } : Props) =>
     <button
         className={className}
         onClick={onClick}
         type={type}
-    >{label}</button>
-);
+    >{label}</button>;
+
+export const Button = memo(NonMemoButton);
