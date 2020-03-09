@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { memo } from 'react';
 import { Button } from '../../atoms';
 import './style.css';
 
@@ -10,7 +10,7 @@ type Props = {
 /**
  * @param onSubmit
  */
-export const LocationForm = ({ onSubmit } : Props) =>
+export const LocationForm = memo(({ onSubmit } : Props) =>
     <form
         className="locationForm"
         onSubmit={onSubmit}
@@ -28,4 +28,5 @@ export const LocationForm = ({ onSubmit } : Props) =>
             type="submit"
             label="Add new city"
         />
-    </form>;
+    </form>
+);

@@ -6,8 +6,8 @@ const ACCEPTABLE_STATUS = [
     204
 ];
 
-export const get = async ({ url } : { url: string }) =>
-    await axios
+export const get = ({ url } : { url: string }) =>
+    axios
         .get(url)
         .then(({ data, status }) => {
             if (ACCEPTABLE_STATUS.includes(status)) {

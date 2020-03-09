@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { memo } from 'react';
 
 type Props = {
     className?: string,
@@ -14,9 +14,10 @@ type Props = {
  * @param onClick
  * @param type {string}
  */
-export const Button = ({ className, label, onClick, type = 'button' } : Props) =>
+export const Button = memo(({ className, label, onClick, type = 'button' } : Props) =>
     <button
         className={className}
         onClick={onClick}
         type={type}
-    >{label}</button>;
+    >{label}</button>
+);

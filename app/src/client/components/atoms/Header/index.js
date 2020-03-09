@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { memo } from 'react';
 
 type Props = {
     className?: string,
@@ -10,7 +10,7 @@ type Props = {
  * @param className {string}
  * @param title {string}
  */
-export const Header = ({ className, title } : Props) => {
+export const Header = memo(({ className, title } : Props) => {
     const headerProps = className
         ? { className }
         : {};
@@ -18,4 +18,4 @@ export const Header = ({ className, title } : Props) => {
     return (
         <h2 {...headerProps}>{title}</h2>
     );
-};
+});

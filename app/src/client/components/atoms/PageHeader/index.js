@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { memo } from 'react';
 import './style.css';
 
 type Props = {
@@ -9,7 +9,8 @@ type Props = {
 /**
  * @param title {string}
  */
-export const PageHeader = ({ title } : Props) =>
+export const PageHeader = memo(({ title } : Props) =>
     <header className="App-header">
       {title}
-    </header>;
+    </header>
+);

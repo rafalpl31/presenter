@@ -22,12 +22,25 @@ type State = {
     ...SunDetailsType
 };
 
-export class Location extends React.PureComponent<Props, State> {
+export class Location extends React.Component<Props, State> {
 
     constructor(props: Props) {
         super(props);
 
         this.state = SunDetails();
+    }
+
+    shouldComponentUpdate (
+        nextProps: Props,
+        { sunrise: nextSunrise, sunset: nextSunset }: State,
+        nextContext: any
+    ): boolean {
+        const {
+            sunrise,
+            sunset
+        } = this.state;
+
+        return nextSunrise !== sunrise || nextSunset !== sunset;
     }
 
     componentDidMount() {

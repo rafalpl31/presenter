@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { memo } from 'react';
 import { getStyles } from './getAnimationStyles';
 import './style.css';
 
@@ -12,8 +12,9 @@ type Props = {
  * @param sunrise {string}
  * @param sunset {string}
  */
-export const DayLightAnimation = ({ sunrise, sunset } : Props) =>
-  <div
-    className="dayLightAnimation"
-    style={getStyles(sunrise, sunset)}
-  />;
+export const DayLightAnimation = memo(({ sunrise, sunset } : Props) =>
+    <div
+        className="dayLightAnimation"
+        style={getStyles(sunrise, sunset)}
+    />
+);
